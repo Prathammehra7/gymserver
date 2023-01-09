@@ -14,11 +14,15 @@ app.use(express.urlencoded({ limit: "100mb", extended: false }));
 
 const dotenv = require("dotenv")
 dotenv.config()
-
-
-
 const dbConfig = require("./Service/dbconfig");
 dbConfig();
+const Paymentroutes = require("./Routes/Payment");
+const routes = require("./Routes/useroutes");
+const Trainer = require("./Routes/trainerroutes");
+app.use("/api", routes );
+app.use("/api/Trainer", Trainer );
+app.use("/api/Payment",Paymentroutes)
+
 
 
 app.listen(PORT, (error) => {

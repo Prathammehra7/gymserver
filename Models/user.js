@@ -9,14 +9,19 @@ const userSchema = new mongoose.Schema(
             type: String,
             require: true,
             },
-        Password:{
+        password:{
             type: String,
             require: true,
             },
-        Cpassword:{
+        confirmPassword:{
             type: String,
             require: true,
             },
+            trainers : 
+            [{
+                // type : mongoose.Schema.Types.ObjectId,
+                type: String,
+            }],
     },
     {
         timestamps: true,
