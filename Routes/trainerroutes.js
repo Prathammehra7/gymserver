@@ -24,7 +24,7 @@ router.post("/trainerscreate", async (req, res) => {
 })
 
 router.delete("/trainersdelete/:trainerid",  async (req, res) => {
-    const id = req.params.trainersid;
+    const id = req.params.trainerid;
 
     await trainer.findByIdAndDelete(id);
 
@@ -32,9 +32,9 @@ router.delete("/trainersdelete/:trainerid",  async (req, res) => {
 })
 
 router.get("/getTrainers",  async (req, res) => {
-    const movies = await trainer.find({});
+    const trainer = await trainer.find({});
 
-    return res.send(movies);
+    return res.send(trainer);
 })
 
 router.get("/findtrainers/:trainerid", async (req, res) => {
